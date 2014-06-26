@@ -1,16 +1,17 @@
-float x=0,y=0;
-float vx=5,vy=5;
+float x=0,y=0,z=0; //int 
+float vx=5,vy=5;  //int
 
 void setup(){
   size(500,500);
 }
 
 void draw(){
-   background(255,255,255);
+   z++; 
+  background(255,255,255);
    strokeWeight(3);
    ellipse(x,y,20,20);
    
-   x+=vx; y+=vy;
+   x+=vx/2; y+=vy+(z/3);
    
    if(x<0||width<x){
      vx*=-1;
@@ -18,5 +19,6 @@ void draw(){
    
    if(y<0||height<y){
      vy*=-1;
+     z=-25;
    }
 }
